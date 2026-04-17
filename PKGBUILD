@@ -1,21 +1,23 @@
-# Maintainer: vnsgzx <tvoj-email-opciono>
+# ... (početak fajla ostaje isti)
 pkgname=vns-manjaro-toolbox
-pkgver=1.0.0
+pkgver=1.0.1.r5.g828e27f  # Ovo će se automatski ažurirati
 pkgrel=1
-pkgdesc="Lightweight PyQt6 maintenance tool for Manjaro Linux"
+pkgdesc="My Manjaro Toolbox"
 arch=('any')
-url="https://github.com/TVOJ-PROFIL/vns-manjaro-toolbox"
-license=('GPL3')
-depends=('python-pyqt6' 'yay' 'xfce4-terminal')
-source=("git+$url.git" "vns-manjaro-toolbox.desktop")
-md5sums=('SKIP' 'SKIP')
+url="https://github.com/vnsgzx/vns-manjaro-toolbox"
+license=('GPL')
+depends=('python-pyqt6')
+makedepends=('git') # OBAVEZNO dodaj git ovde
+source=("${pkgname}::git+${url}.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$pkgname"
+  # Generiše verziju u formatu: 1.0.1.r[broj_commitova].[hash_commita]
+  printf "1.0.1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
 
 package() {
-  cd "$srcdir/$pkgname"
-  
-  # Instalacija izvršnog fajla
-  install -Dm755 main.py "$pkgdir/usr/bin/$pkgname"
-  
-  # Instalacija .desktop prečice
-  install -Dm644 "$srcdir/vns-manjaro-toolbox.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+  cd "$pkgname"
+  # ... tvoj postojeći deo za instalaciju (install -Dm755...)
 }
