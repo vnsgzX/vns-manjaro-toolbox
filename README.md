@@ -15,7 +15,7 @@
 
 ## 🚀 Installation
 
-To install the tool on your Manjaro system, run the following commands in your terminal:
+To install **VNS Manjaro Toolbox** permanently on your system, run the following commands:
 
 ```bash
 git clone [https://github.com/vnsgzx/vns-manjaro-toolbox.git](https://github.com/vnsgzx/vns-manjaro-toolbox.git)
