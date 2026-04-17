@@ -18,6 +18,6 @@
 To install **VNS Manjaro Toolbox** permanently on your system, run the following commands:
 
 ```bash
-git clone [https://github.com/vnsgzx/vns-manjaro-toolbox.git](https://github.com/vnsgzx/vns-manjaro-toolbox.git)
+git clone https://github.com/vnsgzx/vns-manjaro-toolbox.git
 cd vns-manjaro-toolbox
 makepkg -si
