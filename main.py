@@ -10,7 +10,7 @@ from PyQt6.QtGui import QFont
 class VNSManjaroToolbox(QWidget):
     def __init__(self):
         super().__init__()
-        self.version = "1.0.0"
+        self.version = "1.0.1"
         self.initUI()
 
     def initUI(self):
